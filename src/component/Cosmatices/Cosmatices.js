@@ -1,7 +1,13 @@
 import React from 'react';
 
 const Cosmatices = (props) => {
-    const {id,name,price} = props.cosmatie
+    const { id, name, price } = props.cosmatie
+    const addToCard = (id) => {
+        localStorage.setItem(id ,1)
+    }
+    const loaceStorageAdd = (id) => {
+        localStorage.setItem(id,1)
+    }
     return (
         <div style={{
             backgroundColor: "yellow",
@@ -11,6 +17,7 @@ const Cosmatices = (props) => {
             <p>Consmatices id: {id}</p>
             <p>Consmatices Name : {name}</p>
             <p>Consmatices Price : {price}</p>
+            <button onClick={ ()=>addToCard(id)}>Add to card </button>
         </div>
     );
 };
